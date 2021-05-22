@@ -97,11 +97,12 @@ nav a{
     height:12.5rem;
     display: block;   
     bottom: 35px;
-    left: 45%;
+    left: 10px;
     display:block;
     position: absolute;
-    transition-property: bottom;
+    transition-property:left;
     transition-duration: 2s;   
+    cursor:pointer;
 }
 /*#plataforma{
     background-color:chocolate;
@@ -223,6 +224,19 @@ nav a{
         margin-top:120px;
         cursor:pointer;
     }
+   
+    #logo-teclado{
+        border-radius:50%;
+        height:8rem;
+        display: none;   
+        bottom: 35px;
+        left: 10px;
+        display:block;
+        position: absolute;
+        transition-property:left;
+        transition-duration: 2s;   
+        cursor:pointer;
+    }
 }
 
 /*media query pantallas menos de 987px*/
@@ -303,12 +317,72 @@ nav a{
         margin:0 1.5rem ;
     
     }
-    #texto{
-        transition:5s;
-        font-size:20px;
-        cursor:pointer;
+}
+#texto{
+    transition:5s;
+    font-size:20px;
+    margin-top:120px;
+    cursor:pointer;
 }
 
+#logo-teclado{
+    border-radius:50%;
+    height:8rem;
+    display: none;   
+    bottom: 35px;
+    left: 10px;
+    display:block;
+    position: absolute;
+    transition-property:left;
+    transition-duration: 2s;   
+    cursor:pointer;
+}
+#suelo{
+    border-top: 4px blueviolet solid;
+    
+    background-image:url(imgaen_fondo.jpg);
+    height:30px;
+    position:absolute;
+    bottom:0px;
+    width:100%;
+}
+
+@media only screen and (orientation:landscape){
+     #interactividad{
+        height: 100px;
+        position:absolute;
+        top:20rem;
+        margin:0 1.5rem ;
+    
+    }
+}
+#texto{
+    transition:5s;
+    font-size:20px;
+    margin-top:120px;
+    cursor:pointer;
+}
+
+#logo-teclado{
+    border-radius:50%;
+    height:8rem;
+    display: none;   
+    bottom: 35px;
+    left: 10px;
+    display:block;
+    position: absolute;
+    transition-property:left;
+    transition-duration: 2s;   
+    cursor:pointer;
+}
+#suelo{
+    border-top: 4px blueviolet solid;
+    
+    background-image:url(imgaen_fondo.jpg);
+    height:30px;
+    position:absolute;
+    bottom:0px;
+    width:100%;
 }
 
 

@@ -76,7 +76,7 @@ logo.ondblclick=ocultarMenu;
 //interactividad
 //aumenta texto
 const cambiaTexto= () =>{
-    texto.style.fontSize='80px'
+    texto.style.fontSize='50px'
 }
 //evento
 texto.onclick=cambiaTexto;
@@ -85,11 +85,56 @@ texto.onclick=cambiaTexto;
 const returnSize = () =>{
     texto.style.fontSize='20px'
     }
-texto.ondblclick=returnSize;
+html.onmouseover=returnSize;
+
 // prueba con alert
-
 function saludar(){
-alert('Bienvenidos'+'\nEsta es una web interactiva desarrollada con JavaScript'+'\nTe animo a intereactuar con el mouse y el teclado')
-
+/*alert('¡¡Bienvenidos!!'+'\nEsta es una web interactiva desarrollada con JavaScript'+'\nTe animo a intereactuar con el mouse y el teclado')*/
+/*const alerta= {
+    saludar:'¡¡Bienvenidos!!'+'\nEsta es una web interactiva desarrollada con JavaScript'+'\nTe animo a intereactuar con el mouse y el teclado',
+    instrucciones: {
+        'logo superior': [{'parte 1':'1.Coloca el Mouse sobre el icono de la parte superior.'},{'parte 2':'Si haces 1 click se abrirá el menú'},
+    {'parte 3':'Si haces doble click, se cierra el menu'},{'parte 3':'Si mueves la rueda del mouse se amplia'}]
+}
+    }*/
+  //alert(alerta.saludar)
+  //voy a utilizar la libería sweetalert que personaliza las alertas. debo utilizar la función swal()
+ swal('¡Bienvenido!','Esta es una web interactiva desarrollada con JavaScript\n\nTe animo a intereactuar con el mouse y el teclado')
+ // utilizo una promesa /promises
+ .then(() => {
+    // let segundaAlerta='Instrucciones','Te animo a intereactuar con el mouse y el teclado'+ '\n\nej: Logo superior'+'\n1.Coloca el Mouse sobre el icono de la parte superior.\nSi haces 1 click se abrirá el menú'+
+     '\nSi haces doble click, se cierra el menu\nSi mueves la rueda del mouse se amplia el logo'
+    swal('Instrucciones','ej: Logo superior'+'\n1.Coloca el Mouse sobre el icono de la parte superior.\nSi haces 1 click se abrirá el menú'+
+    '\nSi haces doble click, se cierra el menu\nSi mueves la rueda del mouse se amplia el logo\n\nchssss: Pulsa alguna tecla del teclado');
+  })
+  
 }
 saludar();
+
+//interacción con el teclado. Vamos a mover el logo del suelo
+//event handler function
+const mueveLogoDer= ()=>{
+    logoTeclado.style.left='80%';
+}
+const mueveLogoIz= ()=>{
+    logoTeclado.style.left='10px';
+}
+//llamo al evento
+//ojo porque para los eventos del teclado hay que usar document
+document.addEventListener('keydown',mueveLogoDer)
+document.addEventListener('keyup',mueveLogoIz)
+
+//evento para pantalla táctil touch
+//mirar documentación porque hay varios eventos
+//aquí utilizo touchmove
+const mueveDer= () => {
+    logoTeclado.style.left='65%';
+}
+const mueveIz= () =>{
+    logoTeclado.style.left='10px';
+}
+
+//llamo al evento
+//logoTeclado.addEventListener('pointerover',mueveDer,false)//se le pasa como tercer parámetro false para que inicialmente no se mueva
+logoTeclado.addEventListener('pointerover',mueveDer,false)
+logoTeclado.addEventListener('pointerup',mueveIz,false)
